@@ -1,114 +1,89 @@
-# ros2_setup_scripts_ubuntu
-
-[![GitHub Actions](https://github.com/Tiryoh/ros2_setup_scripts_ubuntu/workflows/ROS2%20install%20test/badge.svg)](https://github.com/Tiryoh/ros2_setup_scripts_ubuntu/actions/workflows/main.yml?query=workflow%3A%22ROS2+install+test%22)
-
-unofficial ROS2 install script for Ubuntu
-
-Access https://index.ros.org/doc/ros2/Installation/ to get the updated information.
-
-ROS 1 version: https://github.com/Tiryoh/ros_setup_scripts_ubuntu
-
-## QuickStart
-
-After downloading this repository, just run the following command.
-
-```sh
-./run.sh
+## ${ROS2\\ 설치를\\ 위해\\ {\color{red}인터넷을\\ 연결해야\\ 합니다}}\ !!!!$
+```
+Contents: Ubuntu 22.04에 ROS2 Humble을 설치
+Update  : 2024-05-18
 ```
 
-## Usage
+```
+설치는 “run.sh” 파일을 사용합니다.
+설치 과정에서 해당 파일을 다운로드하는 과정도 포함합니다.
 
-By default, `run.sh` will install `ros-humble-desktop`.   
-If you need to install another package, edit line8-9 in `run.sh`.
+인터넷은 “run.sh”파일 다운로드와 ROS2 설치 과정에 필요합니다.
+파일이 있다고 인터넷을 연결하지 않으면, 제대로 설치되지 않습니다.
 
-```sh
-CHOOSE_ROS_DISTRO=humble # or foxy, iron, etc...
-INSTALL_PACKAGE=desktop # or ros-base
+파일이 있는 경우, 파일이 있는 경로로 이동한 후
+sh run.sh를 실행하면 설치됩니다.
+```
+</br></br></br></br>
+
+
+# 우분투 설치 확인
+```
+lsb_release -r     # 22.04가 나오는지 확인
+sudo passwd root   # 비밀번호 설정
+
+sudo apt update
+sudo apt install curl
 ```
 
-For example, if you want to install ros-base package of ROS 2 Foxy,
-edit like the followings.
 
-```sh
-CHOOSE_ROS_DISTRO=foxy # or foxy, iron, etc...
-INSTALL_PACKAGE=ros-base # or ros-base
+
+# 1. 설치
 ```
-
-After editing, run `run.sh` to install the packages.
-
-```sh
-./run.sh
+curl -L -O https://github.com/Jinsun-Lee/ros2_humble_install_sh/raw/main/run.sh; sh run.sh
 ```
-
-### Individual installers
-
-In addition, there are other ways to use the installers.
-
-ROS 2 Humble (LTS)
-
-* To install `ros-humble-ros-base`, use [`ros2-humble-ros-base-main.sh`](./ros2-humble-ros-base-main.sh) instead of `run.sh`.
-* To install `ros-humble-desktop`, use [`ros2-humble-desktop-main.sh`](./ros2-humble-desktop-main.sh) instead of `run.sh`.
-
-ROS 2 Iron
-
-* To install `ros-iron-ros-base`, use [`ros2-iron-ros-base-main.sh`](./ros2-iron-ros-base-main.sh) instead of `run.sh`.
-* To install `ros-iron-desktop`, use [`ros2-iron-desktop-main.sh`](./ros2-iron-desktop-main.sh) instead of `run.sh`.
-
-ROS 2 Dashing (EOL)
-
-* To install `ros-dashing-ros-base`, use [`ros2-dashing-ros-base-main.sh`](./ros2-dashing-ros-base-main.sh) instead of `run.sh`.
-* To install `ros-dashing-desktop`, use [`ros2-dashing-desktop-main.sh`](./ros2-dashing-desktop-main.sh) instead of `run.sh`.
-
-ROS 2 Eloquent (EOL)
-
-* To install `ros-eloquent-ros-base`, use [`ros2-eloquent-ros-base-main.sh`](./ros2-eloquent-ros-base-main.sh) instead of `run.sh`.
-* To install `ros-eloquent-desktop`, use [`ros2-eloquent-desktop-main.sh`](./ros2-eloquent-desktop-main.sh) instead of `run.sh`.
-
-ROS 2 Foxy (EOL)
-
-* To install `ros-foxy-ros-base`, use [`ros2-foxy-ros-base-main.sh`](./ros2-foxy-ros-base-main.sh) instead of `run.sh`.
-* To install `ros-foxy-desktop`, use [`ros2-foxy-desktop-main.sh`](./ros2-foxy-desktop-main.sh) instead of `run.sh`.
-
-ROS 2 Galactic (EOL)
-
-* To install `ros-galactic-ros-base`, use [`ros2-galactic-ros-base-main.sh`](./ros2-galactic-ros-base-main.sh) instead of `run.sh`.
-* To install `ros-galactic-desktop`, use [`ros2-galactic-desktop-main.sh`](./ros2-galactic-desktop-main.sh) instead of `run.sh`.
-
-## Supported LTS Versions
-
-Reference: [REP-0003](https://ros.org/reps/rep-0003.html), [REP-2000](https://ros.org/reps/rep-2000.html)
-
-| Ubuntu | ROS 1 | ROS 2 |
-| ------ | ----- | ----- |
-| Ubuntu 18.04<br>EOL: May 2023 | Melodic<br>EOL: May 2023 | Dashing<br>EOL: May 2021 |
-| Ubuntu 20.04<br>EOL: May 2025 | Noetic<br>EOL: May 2025 | Foxy<br>EOL: May 2023 |
-| Ubuntu 22.04<br>EOL: May 2027 | - | Humble<br>EOL: May 2027 |
+![image](https://github.com/Jinsun-Lee/ros2_humble_install_sh/assets/68187536/f3fdc0af-61af-45d2-9ac4-f4cb47716408)
+</br></br>
 
 
-## LICENSE
+# 2. 설치 확인
+```
+ROS가 제대로 설치된 경우에만 아래와 같은 출력이 나온다!
+
+[INFO] [1716016137.177980873] [talker]: Publishing: 'Hello World: 1'
+[INFO] [1716016138.177905936] [talker]: Publishing: 'Hello World: 2'
+[INFO] [1716016139.177907257] [talker]: Publishing: 'Hello World: 3'
+```
+![image](https://github.com/Jinsun-Lee/ros2_humble_install_sh/assets/68187536/cce90577-bd60-4fa0-81b0-b96c2752908b)
 
 ```
-Copyright 2019-2023 Tiryoh
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+source /opt/ros/humble/setup.bash
+sh run.sh
 ```
 
-### Acknowledgements
+</br></br>
 
-`run.sh` is based on https://index.ros.org/doc/ros2/Installation/Crystal/Linux-Install-Debians/
-by Open Robotics, licensed under CC-BY-4.0.  
 
-`tutorial.sh` is based on https://index.ros.org/doc/ros2/Tutorials/Colcon-Tutorial/
-by Open Robotics, licensed under CC-BY-4.0.  
 
-source: https://github.com/ros2/ros2_documentation
+
+
+
+
+</br></br></br>
+---
+
+<details>
+<summary>설치 제거</summary>
+<div markdown="1">       
+
+```
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock*
+sudo dpkg --configure -a
+sudo apt update
+sudo apt remove ~nros-humble-* && sudo apt autoremove
+sudo rm /etc/apt/sources.list.d/ros2.list
+sudo apt update
+sudo apt autoremove
+#sudo apt upgrade
+
+source /opt/ros/humble/setup.bash
+ros2 run demo_nodes_cpp talker
+```
+
+</div>
+</details>
+
+
+</br></br></br>
