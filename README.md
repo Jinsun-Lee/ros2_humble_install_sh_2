@@ -1,9 +1,8 @@
-## ${ROS2\\ 설치를\\ 위해\\ {\color{red}인터넷을\\ 연결해야\\ 합니다}}\ !!!!$
+# ${ROS2\\ 설치를\\ 위해\\ {\color{red}인터넷을\\ 연결해야\\ 합니다}}\ !!!!$
 ```
-Contents: Ubuntu 22.04에 ROS2 Humble을 설치
+Contents: Ubuntu 22.04에 ROS 2 Humble를 한 줄 명령어로 설치할 수 있는 스크립트입니다.  
 Update  : 2024-05-18
 ```
-
 ```
 설치는 “run.sh” 파일을 사용합니다.
 설치 과정에서 해당 파일을 다운로드하는 과정도 포함합니다.
@@ -14,10 +13,11 @@ Update  : 2024-05-18
 파일이 있는 경우, 파일이 있는 경로로 이동한 후
 sh run.sh를 실행하면 설치됩니다.
 ```
-</br></br></br></br>
+
+</br></br>
 
 
-# 우분투 설치 확인
+# 0. 우분투 설치 확인
 ```
 lsb_release -r     # 22.04가 나오는지 확인
 sudo passwd root   # 비밀번호 설정
@@ -26,15 +26,15 @@ sudo apt update
 sudo apt install curl
 ```
 
-
+</br>
 
 # 1. 설치
 ```
 curl -L -O https://github.com/Jinsun-Lee/ros2_humble_install_sh/raw/main/run.sh; sh run.sh
 ```
 ![image](https://github.com/Jinsun-Lee/ros2_humble_install_sh/assets/68187536/f3fdc0af-61af-45d2-9ac4-f4cb47716408)
-</br></br>
 
+</br>
 
 # 2. 설치 확인
 ```
@@ -51,13 +51,7 @@ source /opt/ros/humble/setup.bash
 sh run.sh
 ```
 
-</br></br>
-
-
-
-
-
-
+</br>
 
 </br></br></br>
 ---
@@ -84,6 +78,3 @@ ros2 run demo_nodes_cpp talker
 
 </div>
 </details>
-
-
-</br></br></br>
